@@ -1,6 +1,5 @@
 #!/bin/bash
-#Borra los ultimos archivos creados
-gradle clean
+
 # Lee cada línea del archivo host.txt
 exec 3<"hosts.txt"
 
@@ -13,7 +12,7 @@ while read -u 3 line; do
   
 
   # Modificar el archivo
-  sed -i "s/CoffeMach.Endpoints = tcp -h x -p 12345/CoffeMach.Endpoints = tcp -h $ip -p 12346/g" coffeeMach/src/main/resources/coffeMach.cfg
+  sed -i "s/CoffeMach.Endpoints = tcp -h localhost -p 12346/CoffeMach.Endpoints = tcp -h $ip -p 12346/g" coffeeMach/src/main/resources/coffeMach.cfg
 
   # Ejecutar el comando Gradle
   gradle -p coffeeMach build
@@ -31,7 +30,7 @@ while read -u 3 line; do
 
 
   #Reset file
-  sed -i "s/CoffeMach.Endpoints = tcp -h $ip -p 12346/CoffeMach.Endpoints = tcp -h x -p 12345/g" coffeeMach/src/main/resources/coffeMach.cfg
+  sed -i "s/CoffeMach.Endpoints = tcp -h $ip -p 12346/CoffeMach.Endpoints = tcp -h localhost -p 12346/g" coffeeMach/src/main/resources/coffeMach.cfg
 
 done 
 
