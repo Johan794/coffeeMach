@@ -15,7 +15,7 @@ public class CoffeeMach {
       VentaServicePrx ventas = VentaServicePrx.checkedCast(
           communicator.propertyToProxy("ventas")).ice_twoway();
       RecetaServicePrx recetaServicePrx = RecetaServicePrx.checkedCast(
-          communicator.propertyToProxy("recetas")).ice_twoway();
+          communicator.propertyToProxy("proxyCacheRecetas")).ice_twoway();
 
       ObjectAdapter adapter = communicator.createObjectAdapter("CoffeMach");
       ControladorMQ service = new ControladorMQ();
