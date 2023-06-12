@@ -5,10 +5,12 @@ import java.util.List;
 import com.zeroc.Ice.Current;
 public class ProxyCacheReceta implements RecetaService{
     private RecetaServicePrx recetaServicePrx; 
-    private List<String[]> cache; 
+    private Map<String, CacheData<String []>> cache;
+    private static final long TIME_TO_LIVE = 900000; // Tiempo de vida de 15 minutos en milisegundos
+    private static final String NO_PARAM_QUERY_KEY = "NO_PARAM_QUERY"; //Lave para usar el HashMap y aprovechar sus propiedades
 
     public ProxyCacheReceta(){
-        this.cache = null;
+        this.cache = new HashMap<>();
     }
 
     
@@ -24,11 +26,14 @@ public class ProxyCacheReceta implements RecetaService{
 
     @Override
     public String[] consultarProductos(Current current) {
-        if(cache.length == null){
-            this.cache =  recetaServicePrx.consultarProductos(); 
-            System.out.println("Se usa el proxy cache")   
+        CacheData<String[]> data = cache.get(NO_PARAM_QUERY_KEY);
+        if(data == null || (System.currentTimeMillis() > data.getExpirationTime())){
+            System.out.println("MISS ---> getting data from central server");
+            cache.remove(NO_PARAM_QUERY_KEY);
+            data = new CacheData<String[]>(recetaServicePrx.consultarRecetas(),System.currentTimeMillis() + TIME_TO_LIVE); 
+            cache.put(NO_PARAM_QUERY_KEY,data)
         }
-        return cache;    
+        return data.getData()
     }
     
 
