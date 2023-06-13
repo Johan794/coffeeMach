@@ -11,6 +11,8 @@ servicios/_AlarmaServicePrxI.java
  servicios._AlarmaServicePrxI
 servicios/_ServicioComLogisticaPrxI.java
  servicios._ServicioComLogisticaPrxI
+Controller/ProxyCacheReceta.java
+ Controller.ProxyCacheReceta
 servicios/_VentaServicePrxI.java
  servicios._VentaServicePrxI
 servicios/AlarmaService.java
@@ -22,6 +24,8 @@ servicios/StringSeqHelper.java
  servicios.StringSeqHelper
 servicios/VentaServicePrx.java
  servicios.VentaServicePrx
+ProxyCacheServer.java
+ ProxyCacheServer
 servicios/VentaService.java
  servicios.VentaService
  servicios.VentaService$1
@@ -29,6 +33,8 @@ servicios/_RecetaServicePrxI.java
  servicios._RecetaServicePrxI
 servicios/Moneda.java
  servicios.Moneda
+Controller/CacheData.java
+ Controller.CacheData
 servicios/MapStrIntHelper.java
  servicios.MapStrIntHelper
 servicios/ServicioAbastecimiento.java

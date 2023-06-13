@@ -1,7 +1,7 @@
 package Controller;
 
 import servicios.*;
-import java.util.List;
+import java.util.*;
 import com.zeroc.Ice.Current;
 public class ProxyCacheReceta implements RecetaService{
     private RecetaServicePrx recetaServicePrx; 
@@ -31,9 +31,9 @@ public class ProxyCacheReceta implements RecetaService{
             System.out.println("MISS ---> getting data from central server");
             cache.remove(NO_PARAM_QUERY_KEY);
             data = new CacheData<String[]>(recetaServicePrx.consultarRecetas(),System.currentTimeMillis() + TIME_TO_LIVE); 
-            cache.put(NO_PARAM_QUERY_KEY,data)
+            cache.put(NO_PARAM_QUERY_KEY,data);
         }
-        return data.getData()
+        return data.getData();
     }
     
 
@@ -54,12 +54,13 @@ public class ProxyCacheReceta implements RecetaService{
 
     @Override
     public String registrarReceta(String nombre, int precio, Current current) {
-       return;
+       return "";
     }
 
     @Override
     public String registrarIngrediente(String nombre, Current current) {
         
+        return  "";
         
     }
 

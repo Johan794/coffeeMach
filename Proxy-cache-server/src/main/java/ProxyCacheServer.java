@@ -16,7 +16,7 @@ public class ProxyCacheServer {
 
         ProxyCacheReceta proxyCache = new ProxyCacheReceta();  
         proxyCache.setRecetaServicePrx(recetaServicePrx);
-        adapter.add(proxyCache,Util.stringToIdentity("ProxyCacheRecetas"))
+        adapter.add(proxyCache,Util.stringToIdentity("ProxyCacheRecetas"));
         adapter.activate();
         communicator.waitForShutdown();
         
