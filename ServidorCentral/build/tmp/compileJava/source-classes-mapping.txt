@@ -1,10 +1,16 @@
 servicios/RecetaServicePrx.java
  servicios.RecetaServicePrx
+publisherSubscriber/PublisherPrx.java
+ publisherSubscriber.PublisherPrx
+publisherSubscriber/_PublisherPrxI.java
+ publisherSubscriber._PublisherPrxI
 servicios/_ServicioAbastecimientoPrxI.java
  servicios._ServicioAbastecimientoPrxI
 alarma/Alarma.java
  alarma.Alarma
  alarma.Alarma$1
+publisherSubscriber/_ObserverPrxI.java
+ publisherSubscriber._ObserverPrxI
 servicios/_AlarmaServicePrxI.java
  servicios._AlarmaServicePrxI
 ServerControl/ServerControl.java
@@ -27,6 +33,11 @@ alarma/AlarmasManager.java
  alarma.AlarmasManager
 ventas/VentasManager.java
  ventas.VentasManager
+publisherSubscriber/Publisher.java
+ publisherSubscriber.Publisher
+ publisherSubscriber.Publisher$1
+publisherSubscriber/ObserverPrx.java
+ publisherSubscriber.ObserverPrx
 servicios/VentaService.java
  servicios.VentaService
  servicios.VentaService$1
@@ -61,6 +72,9 @@ modelo/VentasMaquina.java
 servicios/AlarmaService.java
  servicios.AlarmaService
  servicios.AlarmaService$1
+publisherSubscriber/Observer.java
+ publisherSubscriber.Observer
+ publisherSubscriber.Observer$1
 modelo/AsignacionMaquina.java
  modelo.AsignacionMaquina
 servicios/StringSeqHelper.java

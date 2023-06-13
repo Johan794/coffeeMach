@@ -1,27 +1,35 @@
 <state>
-  <timestamp value='1686615147032' />
+  <timestamp value='1686684232391' />
   <sourceSet name='default'>
-    <source name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\CoffeMach.ice'>
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioComLogistica.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioAbastecimiento.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\Moneda.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\AlarmaService.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\VentaService.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\RecetaService.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\StringSeqHelper.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\MapStrIntHelper.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioComLogisticaPrx.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_ServicioComLogisticaPrxI.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioAbastecimientoPrx.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_ServicioAbastecimientoPrxI.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\AlarmaServicePrx.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_AlarmaServicePrxI.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\VentaServicePrx.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_VentaServicePrxI.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\RecetaServicePrx.java' />
-      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_RecetaServicePrxI.java' />
+    <source name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\CoffeMach.ice'>
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioComLogistica.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioAbastecimiento.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\Moneda.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\AlarmaService.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\VentaService.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\RecetaService.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\StringSeqHelper.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\MapStrIntHelper.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioComLogisticaPrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_ServicioComLogisticaPrxI.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\ServicioAbastecimientoPrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_ServicioAbastecimientoPrxI.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\AlarmaServicePrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_AlarmaServicePrxI.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\VentaServicePrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_VentaServicePrxI.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\RecetaServicePrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\servicios\_RecetaServicePrxI.java' />
     </source>
-    <arg value='C:\Program Files\ZeroC\Ice-3.7.9\\bin\slice2java.exe' />
-    <arg value='-IC:\Program Files\ZeroC\Ice-3.7.9\\slice' />
+    <source name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\PublisherSubscriber.ice'>
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\publisherSubscriber\Observer.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\publisherSubscriber\Publisher.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\publisherSubscriber\ObserverPrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\publisherSubscriber\_ObserverPrxI.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\publisherSubscriber\PublisherPrx.java' />
+      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\Proxy-cache-server\build\generated-src\publisherSubscriber\_PublisherPrxI.java' />
+    </source>
+    <arg value='C:\Program Files\ZeroC\Ice-3.7.8\\bin\slice2java.exe' />
+    <arg value='-IC:\Program Files\ZeroC\Ice-3.7.8\\slice' />
   </sourceSet>
 </state>
