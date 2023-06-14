@@ -2,12 +2,18 @@ CoffeeMach.java
  CoffeeMach
 servicios/RecetaServicePrx.java
  servicios.RecetaServicePrx
+publisherSubscriber/PublisherPrx.java
+ publisherSubscriber.PublisherPrx
+publisherSubscriber/_PublisherPrxI.java
+ publisherSubscriber._PublisherPrxI
 servicios/_ServicioAbastecimientoPrxI.java
  servicios._ServicioAbastecimientoPrxI
 alarma/Alarma.java
  alarma.Alarma
 interfazUsuario/Prueba.java
  interfazUsuario.Prueba
+publisherSubscriber/_ObserverPrxI.java
+ publisherSubscriber._ObserverPrxI
 servicios/_AlarmaServicePrxI.java
  servicios._AlarmaServicePrxI
 McControlador/VentaRepositorio.java
@@ -20,6 +26,11 @@ servicios/_VentaServicePrxI.java
  servicios._VentaServicePrxI
 servicios/ServicioAbastecimientoPrx.java
  servicios.ServicioAbastecimientoPrx
+publisherSubscriber/Publisher.java
+ publisherSubscriber.Publisher
+ publisherSubscriber.Publisher$1
+publisherSubscriber/ObserverPrx.java
+ publisherSubscriber.ObserverPrx
 productoReceta/Receta.java
  productoReceta.Receta
 suministro/SuministroService.java
@@ -68,9 +79,14 @@ monedero/DepositoMonedas.java
  monedero.DepositoMonedas
 alarma/AlarmaServiceImp.java
  alarma.AlarmaServiceImp
+publisherSubscriber/Observer.java
+ publisherSubscriber.Observer
+ publisherSubscriber.Observer$1
 servicios/AlarmaService.java
  servicios.AlarmaService
  servicios.AlarmaService$1
+McControlador/ControladorMQObserver.java
+ McControlador.ControladorMQObserver
 servicios/StringSeqHelper.java
  servicios.StringSeqHelper
 interfaces/Repositorio.java

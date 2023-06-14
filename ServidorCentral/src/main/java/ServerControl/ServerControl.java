@@ -3,17 +3,23 @@ package ServerControl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import com.zeroc.Ice.Communicator;
 
+import com.zeroc.Ice.Current;
 import modelo.*;
+import publisherSubscriber.ObserverPrx;
 
-public class ServerControl {
+public class ServerControl  {
 
+	private List<Subscriber> observers;
 	ArrayList<String> listaAsociada = new ArrayList<String>();
 	private Communicator comunicator;
 
 	public ServerControl(Communicator com) {
 		this.comunicator = com;
+		observers = new ArrayList<>();
 		// ConsolaAdministracion cAdmin=new ConsolaAdministracion(this);
 		// Thread th=new Thread(cAdmin);
 		// th.start();

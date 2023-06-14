@@ -1,31 +1,28 @@
-servicios/AlarmaServicePrx.java
- servicios.AlarmaServicePrx
 servicios/RecetaServicePrx.java
  servicios.RecetaServicePrx
-servicios/RecetaService.java
- servicios.RecetaService
- servicios.RecetaService$1
+publisherSubscriber/PublisherPrx.java
+ publisherSubscriber.PublisherPrx
+publisherSubscriber/_PublisherPrxI.java
+ publisherSubscriber._PublisherPrxI
 servicios/_ServicioAbastecimientoPrxI.java
  servicios._ServicioAbastecimientoPrxI
+publisherSubscriber/_ObserverPrxI.java
+ publisherSubscriber._ObserverPrxI
 servicios/_AlarmaServicePrxI.java
  servicios._AlarmaServicePrxI
 servicios/_ServicioComLogisticaPrxI.java
  servicios._ServicioComLogisticaPrxI
-Controller/ProxyCacheReceta.java
- Controller.ProxyCacheReceta
 servicios/_VentaServicePrxI.java
  servicios._VentaServicePrxI
-servicios/AlarmaService.java
- servicios.AlarmaService
- servicios.AlarmaService$1
 servicios/ServicioAbastecimientoPrx.java
  servicios.ServicioAbastecimientoPrx
-servicios/StringSeqHelper.java
- servicios.StringSeqHelper
-servicios/VentaServicePrx.java
- servicios.VentaServicePrx
-ProxyCacheServer.java
- ProxyCacheServer
+publisherSubscriber/Publisher.java
+ publisherSubscriber.Publisher
+ publisherSubscriber.Publisher$1
+publisherSubscriber/ObserverPrx.java
+ publisherSubscriber.ObserverPrx
+publisher/ProxyObserver.java
+ publisher.ProxyObserver
 servicios/VentaService.java
  servicios.VentaService
  servicios.VentaService$1
@@ -35,6 +32,32 @@ servicios/Moneda.java
  servicios.Moneda
 Controller/CacheData.java
  Controller.CacheData
+servicios/ServicioComLogistica.java
+ servicios.ServicioComLogistica
+ servicios.ServicioComLogistica$1
+servicios/AlarmaServicePrx.java
+ servicios.AlarmaServicePrx
+servicios/RecetaService.java
+ servicios.RecetaService
+ servicios.RecetaService$1
+publisher/PublisherImp.java
+ publisher.PublisherImp
+Controller/ProxyCacheReceta.java
+ Controller.ProxyCacheReceta
+publisherSubscriber/Observer.java
+ publisherSubscriber.Observer
+ publisherSubscriber.Observer$1
+publisher/Subscriber.java
+ publisher.Subscriber
+servicios/AlarmaService.java
+ servicios.AlarmaService
+ servicios.AlarmaService$1
+servicios/StringSeqHelper.java
+ servicios.StringSeqHelper
+servicios/VentaServicePrx.java
+ servicios.VentaServicePrx
+ProxyCacheServer.java
+ ProxyCacheServer
 servicios/MapStrIntHelper.java
  servicios.MapStrIntHelper
 servicios/ServicioAbastecimiento.java
@@ -42,6 +65,3 @@ servicios/ServicioAbastecimiento.java
  servicios.ServicioAbastecimiento$1
 servicios/ServicioComLogisticaPrx.java
  servicios.ServicioComLogisticaPrx
-servicios/ServicioComLogistica.java
- servicios.ServicioComLogistica
- servicios.ServicioComLogistica$1
