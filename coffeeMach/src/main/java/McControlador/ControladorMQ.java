@@ -20,16 +20,12 @@ import alarma.AlarmaRepositorio;
 import ingrediente.Ingrediente;
 import ingrediente.IngredienteRepositorio;
 
-public class ControladorMQ implements Runnable, ServicioAbastecimiento,publisherSubscriber.Observer {
+public class ControladorMQ implements Runnable, ServicioAbastecimiento{
 
 	private AlarmaServicePrx alarmaServicePrx;
 	private VentaServicePrx ventasService;
 
-	private PublisherPrx proxyPublisher;
-
-	public ControladorMQ(PublisherPrx proxyPublisher){
-		this.proxyPublisher = proxyPublisher;
-	}
+	//private PublisherPrx proxyPublisher;
 
 	// @Reference
 	private AlarmaRepositorio alarmas = AlarmaRepositorio.getInstance();
@@ -740,8 +736,5 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento,publisher
 
 	}
 
-	@Override
-	public void update(Current current) {
-		cargarRecetaMaquinas();
-	}
+	
 }

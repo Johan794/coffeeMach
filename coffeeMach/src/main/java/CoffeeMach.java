@@ -1,6 +1,7 @@
 import com.zeroc.Ice.*;
 
 import McControlador.ControladorMQ;
+import McControlador.ControladorMQObserver;
 
 import java.lang.Exception;
 import java.net.Inet4Address;
@@ -23,12 +24,13 @@ public class CoffeeMach {
           communicator.propertyToProxy("proxyCacheRecetas")).ice_twoway();
 
       PublisherPrx proxyCachePublisher = PublisherPrx.checkedCast(
-          communicator.propertyToProxy("proxyCacheRecetas")).ice_twoway();
+          communicator.propertyToProxy("proxyCachePublisher")).ice_twoway();
 
       ObjectAdapter adapter = communicator.createObjectAdapter("CoffeMach");
-      ControladorMQ service = new ControladorMQ(proxyCachePublisher);
+      ControladorMQ service = new ControladorMQ();
+      ControladorMQObserver observer = new ControladorMQObserver(service);
 
-      ObjectPrx proxy = adapter.add(service, Util.stringToIdentity("controladorMQ"));
+      ObjectPrx proxy = adapter.add(observer, Util.stringToIdentity("controladorMQObserver"));
       service.setAlarmaService(alarmaS);
       service.setVentas(ventas);
       service.setRecetaServicePrx(recetaServicePrx);

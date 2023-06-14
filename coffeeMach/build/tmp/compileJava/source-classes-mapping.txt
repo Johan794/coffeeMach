@@ -85,6 +85,8 @@ publisherSubscriber/Observer.java
 servicios/AlarmaService.java
  servicios.AlarmaService
  servicios.AlarmaService$1
+McControlador/ControladorMQObserver.java
+ McControlador.ControladorMQObserver
 servicios/StringSeqHelper.java
  servicios.StringSeqHelper
 interfaces/Repositorio.java

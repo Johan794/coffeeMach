@@ -1,5 +1,5 @@
 <state>
-  <timestamp value='1686615180217' />
+  <timestamp value='1686721775935' />
   <sourceSet name='default'>
     <source name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\CoffeMach.ice'>
       <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\servicios\ServicioComLogistica.java' />
@@ -20,6 +20,14 @@
       <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\servicios\_VentaServicePrxI.java' />
       <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\servicios\RecetaServicePrx.java' />
       <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\servicios\_RecetaServicePrxI.java' />
+    </source>
+    <source name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\PublisherSubscriber.ice'>
+      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\publisherSubscriber\Observer.java' />
+      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\publisherSubscriber\Publisher.java' />
+      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\publisherSubscriber\ObserverPrx.java' />
+      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\publisherSubscriber\_ObserverPrxI.java' />
+      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\publisherSubscriber\PublisherPrx.java' />
+      <file name='C:\Users\johan\Desktop\Proyectos de git\Arquisoft\coffeeMach\coffeeMach\build\generated-src\publisherSubscriber\_PublisherPrxI.java' />
     </source>
     <arg value='C:\Program Files\ZeroC\Ice-3.7.9\\bin\slice2java.exe' />
     <arg value='-IC:\Program Files\ZeroC\Ice-3.7.9\\slice' />

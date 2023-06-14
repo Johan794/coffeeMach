@@ -5,9 +5,8 @@ import java.lang.Exception;
 import java.net.Inet4Address;
 import java.util.*;
 
-import publisher.PublisherImp;
-import publisherSubscriber.ObserverPrx;
-import publisherSubscriber.PublisherPrx;
+import publisher.*;
+import publisherSubscriber.*;
 import servicios.*;
 public class ProxyCacheServer {
 
@@ -22,15 +21,19 @@ public class ProxyCacheServer {
 
 
 
-        PublisherImp publisherImp = new PublisherImp();
+        PublisherImp publisherImp = new PublisherImp(); //clase publisher que se expone 
 
+        ObjectPrx proxyPublisher = adapter.add(publisherImp,Util.stringToIdentity("ProxyCachePublisher"));
+
+        PublisherPrx proxyCachePublisher = PublisherPrx.checkedCast(proxyPublisher);
 
         PublisherPrx server = PublisherPrx.checkedCast(
-            communicator.propertyToProxy("recetas")).ice_twoway(); //Obtiene el proxy del server
+            communicator.propertyToProxy("recetasPublisher")).ice_twoway(); //Obtiene el proxy del server
 
-        ProxyCacheReceta proxyCache = new ProxyCacheReceta(server); //Se crea la clase que observa
+        ProxyCacheReceta proxyCache = new ProxyCacheReceta();  //Clase de proxycache
+        ProxyObserver proxyObserver = new ProxyObserver(proxyCachePublisher); //Se crea la clase que observa
 
-        ObjectPrx proxy = adapter.add(proxyCache,Util.stringToIdentity("ProxyCache")); //Se obtiene el proxy del observador
+        ObjectPrx proxy = adapter.add(proxyObserver,Util.stringToIdentity("ProxyObserver")); //Se obtiene el proxy del observador
 
         proxyCache.setRecetaServicePrx(recetaServicePrx);
 

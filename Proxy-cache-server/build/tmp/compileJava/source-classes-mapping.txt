@@ -21,6 +21,8 @@ publisherSubscriber/Publisher.java
  publisherSubscriber.Publisher$1
 publisherSubscriber/ObserverPrx.java
  publisherSubscriber.ObserverPrx
+publisher/ProxyObserver.java
+ publisher.ProxyObserver
 servicios/VentaService.java
  servicios.VentaService
  servicios.VentaService$1
@@ -38,11 +40,15 @@ servicios/AlarmaServicePrx.java
 servicios/RecetaService.java
  servicios.RecetaService
  servicios.RecetaService$1
+publisher/PublisherImp.java
+ publisher.PublisherImp
 Controller/ProxyCacheReceta.java
  Controller.ProxyCacheReceta
 publisherSubscriber/Observer.java
  publisherSubscriber.Observer
  publisherSubscriber.Observer$1
+publisher/Subscriber.java
+ publisher.Subscriber
 servicios/AlarmaService.java
  servicios.AlarmaService
  servicios.AlarmaService$1
