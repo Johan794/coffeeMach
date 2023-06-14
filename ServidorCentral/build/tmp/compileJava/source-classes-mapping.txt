@@ -1,5 +1,9 @@
 servicios/RecetaServicePrx.java
  servicios.RecetaServicePrx
+publisherSubscriber/PublisherPrx.java
+ publisherSubscriber.PublisherPrx
+publisherSubscriber/_PublisherPrxI.java
+ publisherSubscriber._PublisherPrxI
 servicios/_ServicioAbastecimientoPrxI.java
  servicios._ServicioAbastecimientoPrxI
 servicios/_AlarmaServicePrxI.java
@@ -7,6 +11,17 @@ servicios/_AlarmaServicePrxI.java
 alarma/Alarma.java
  alarma.Alarma
  alarma.Alarma$1
+<<<<<<< HEAD
+=======
+publisherSubscriber/_ObserverPrxI.java
+ publisherSubscriber._ObserverPrxI
+servicios/_AlarmaServicePrxI.java
+ servicios._AlarmaServicePrxI
+ServerControl/Subscriber.java
+ ServerControl.Subscriber
+ServerControl/ServerControl.java
+ ServerControl.ServerControl
+>>>>>>> 361fd3e42be80f4a5c2d9604c4223fb1735f6d4c
 receta/ProductoReceta.java
  receta.ProductoReceta
 ServerControl/ServerControl.java
@@ -23,10 +38,22 @@ modelo/ManejadorDatos.java
  modelo.ManejadorDatos
 servicios/ServicioAbastecimientoPrx.java
  servicios.ServicioAbastecimientoPrx
+<<<<<<< HEAD
 ventas/VentasManager.java
  ventas.VentasManager
 alarma/AlarmasManager.java
  alarma.AlarmasManager
+=======
+alarma/AlarmasManager.java
+ alarma.AlarmasManager
+publisherSubscriber/Publisher.java
+ publisherSubscriber.Publisher
+ publisherSubscriber.Publisher$1
+ventas/VentasManager.java
+ ventas.VentasManager
+publisherSubscriber/ObserverPrx.java
+ publisherSubscriber.ObserverPrx
+>>>>>>> 361fd3e42be80f4a5c2d9604c4223fb1735f6d4c
 servicios/VentaService.java
  servicios.VentaService
  servicios.VentaService$1
@@ -61,6 +88,9 @@ modelo/VentasMaquina.java
 servicios/AlarmaService.java
  servicios.AlarmaService
  servicios.AlarmaService$1
+publisherSubscriber/Observer.java
+ publisherSubscriber.Observer
+ publisherSubscriber.Observer$1
 modelo/AsignacionMaquina.java
  modelo.AsignacionMaquina
 servicios/StringSeqHelper.java
@@ -71,6 +101,8 @@ modelo/RecetaIngrediente.java
  modelo.RecetaIngrediente
 modelo/ConexionBD.java
  modelo.ConexionBD
+receta/PublisherImp.java
+ receta.PublisherImp
 interfaz/ControladorRecetas.java
  interfaz.ControladorRecetas
  interfaz.ControladorRecetas$1

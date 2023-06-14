@@ -1,5 +1,6 @@
 package McControlador;
 
+import publisherSubscriber.PublisherPrx;
 import servicios.*;
 import monedero.DepositoMonedas;
 import monedero.MonedasRepositorio;
@@ -29,7 +30,7 @@ import alarma.AlarmaRepositorio;
 import ingrediente.Ingrediente;
 import ingrediente.IngredienteRepositorio;
 
-public class ControladorMQ implements Runnable, ServicioAbastecimiento {
+public class ControladorMQ implements Runnable, ServicioAbastecimiento{
 
 	private AlarmaServicePrx alarmaServicePrx;
 	private VentaServicePrx ventasService;
@@ -48,7 +49,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 	private VentaRepositorio ventas = VentaRepositorio.getInstance();
 
 	/**
-	 * @param ventas the ventas to set
+	 * @param ventasS the ventas to set
 	 */
 	public void setVentas(VentaServicePrx ventasS) {
 		this.ventasService = ventasS;

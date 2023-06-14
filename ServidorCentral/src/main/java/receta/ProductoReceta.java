@@ -1,16 +1,22 @@
 package receta;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.zeroc.Ice.Communicator;
 import com.zeroc.Ice.Current;
 
 import modelo.ConexionBD;
 import modelo.ManejadorDatos;
+import publisherSubscriber.PublisherPrx;
 import servicios.RecetaService;
 
-public class ProductoReceta implements RecetaService {
+public class ProductoReceta implements RecetaService{
+
+    private PublisherPrx publisherImp;
+   
 
     private Communicator communicator;
 
@@ -19,6 +25,10 @@ public class ProductoReceta implements RecetaService {
      */
     public void setCommunicator(Communicator communicator) {
         this.communicator = communicator;
+    }
+
+     public void setPublisherImp(PublisherPrx publisherImp) {
+        this.publisherImp = publisherImp;
     }
 
     @Override
@@ -107,6 +117,7 @@ public class ProductoReceta implements RecetaService {
 
     @Override
     public String registrarReceta(String nombre, int precio, Current current) {
+        System.out.println("Si es acá");
         ConexionBD cbd = new ConexionBD(communicator);
         cbd.conectarBaseDatos();
         ManejadorDatos md = new ManejadorDatos();
@@ -115,6 +126,8 @@ public class ProductoReceta implements RecetaService {
         String ret = md.registrarReceta(nombre, precio);
 
         cbd.cerrarConexion();
+
+        publisherImp.notifySubscribers();
 
         return ret;
     }
@@ -132,5 +145,6 @@ public class ProductoReceta implements RecetaService {
 
         return ret;
     }
+
 
 }

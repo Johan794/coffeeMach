@@ -17,7 +17,7 @@ subprojects {
     //
     slice {
         java {
-            files = [file("../CoffeMach.ice")]
+            files = [file("../CoffeMach.ice"),file("../PublisherSubscriber.ice")]
         }
     }
  
