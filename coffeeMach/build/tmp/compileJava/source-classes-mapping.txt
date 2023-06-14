@@ -54,6 +54,7 @@ servicios/RecetaService.java
 McControlador/ControladorMQ.java
  McControlador.ControladorMQ
  McControlador.ControladorMQ$1
+ McControlador.ControladorMQ$10
  McControlador.ControladorMQ$2
  McControlador.ControladorMQ$3
  McControlador.ControladorMQ$4

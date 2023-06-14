@@ -5,6 +5,8 @@ Class-Path: file:/C:/Users/semillero/.gradle/caches/modules-2/files-2.1/
  jar file:/C:/Users/semillero/.gradle/caches/modules-2/files-2.1/org.pos
  tgresql/postgresql/42.3.1/9ca7df660e875b91c78e3d1608d4d7469ad3470c/post
  gresql-42.3.1.jar file:/C:/Users/semillero/.gradle/caches/modules-2/fil
- es-2.1/org.checkerframework/checker-qual/3.5.0/2f50520c8abea66fbd8d26e4
- 81d3aef5c673b510/checker-qual-3.5.0.jar
+ es-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971
+ b33c4e/gson-2.7.jar file:/C:/Users/semillero/.gradle/caches/modules-2/f
+ iles-2.1/org.checkerframework/checker-qual/3.5.0/2f50520c8abea66fbd8d26
+ e481d3aef5c673b510/checker-qual-3.5.0.jar
 

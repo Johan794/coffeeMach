@@ -23,6 +23,7 @@ while read -u 3 line; do
   cd coffeeMach/build/libs/ || exit 
   sshpass -p "swarch" scp -o StrictHostKeyChecking=no -r coffeeMach.jar swarch@"$ip":/home/swarch/coffeemachine-diaz-bonilla-campaz-ricardo/deploy-coffee-machine 
   sshpass -p "swarch" scp -o StrictHostKeyChecking=no -r ice-3.7.6.jar swarch@"$ip":/home/swarch/coffeemachine-diaz-bonilla-campaz-ricardo/deploy-coffee-machine
+  sshpass -p "swarch" scp -o StrictHostKeyChecking=no -r gson-2.7.jar swarch@"$ip":/home/swarch/coffeemachine-diaz-bonilla-campaz-ricardo/deploy-coffee-machine
   sshpass -p "swarch" scp -o StrictHostKeyChecking=no -r postgresql-42.3.1.jar swarch@"$ip":/home/swarch/coffeemachine-diaz-bonilla-campaz-ricardo/deploy-coffee-machine
   
   #sale del directorio

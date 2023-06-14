@@ -8,11 +8,21 @@ import productoReceta.RecetaRepositorio;
 
 import java.util.*;
 import java.io.*;
+import java.time.LocalDate;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
+
 import javax.swing.JFrame;
 import java.awt.event.*;
 import interfazUsuario.Interfaz;
 import com.zeroc.Ice.Current;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import alarma.Alarma;
 import alarma.AlarmaRepositorio;
@@ -81,10 +91,78 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 			e.printStackTrace();
 		}
 
+		
 		arrancarMaquina();
 		eventos();
+		try{
+			Thread t = new Thread(new Runnable() {
+				@Override
+				public void run() {
+					while(true){
+						try {
+							Thread.sleep(1000000);
+							//Thread.sleep(1000);
+							System.out.println("Enviando alarmas");
+
+							/////////////////////////////////////
+							enviarAlarmas();
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			});
+			t.start();
+			deserializarAlarmas();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
 	}
 
+	public void serializarAlarmas(){
+		Gson gson = new GsonBuilder()
+      		.setPrettyPrinting()
+      		.create();
+		
+		String jsonAlarmas = gson.toJson(alarmasToSend);
+		System.out.println(alarmasToSend);
+		try (FileWriter writer = new FileWriter("archivo.json");
+            BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
+			System.out.println(jsonAlarmas);
+            bufferedWriter.write(jsonAlarmas);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	public void deserializarAlarmas(){
+		// Ruta del archivo JSON a deserializar
+        String filePath = "archivo.json";
+
+        // Leer contenido del archivo JSON en una cadena
+        String json;
+        try (FileReader fileReader = new FileReader(filePath);
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+            json = stringBuilder.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        // Crear instancia de Gson
+        Gson gson = new GsonBuilder().create();
+
+        // Deserializar JSON a objeto
+		System.out.println(json);
+        alarmasToSend = gson.fromJson(json, ArrayList.class);
+		System.out.println(alarmasToSend);
+	}
 	@Override
 	public void abastecer(int codMaquina, int idAlarma, Current current) {
 		// TODO Auto-generated method stub
@@ -160,7 +238,8 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 
 			// Envio a Servidor
 			UUID uuid = UUID.randomUUID();
-			enviarAlarmas();
+			//enviarAlarmas();
+			serializarAlarmas();
 			alarmaServicePrx.recibirNotificacionAbastesimiento(abastecimientoServicePrx,codMaquina, idAlarma + "", cantidad, uuid.toString());
 		}
 	}
@@ -330,6 +409,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 				UUID uuid = UUID.randomUUID();
 				alarmasToSend.add(new Alarma("1", "Se requiere mantenimiento",
 						new Date(), uuid.toString()));
+				serializarAlarmas();
 				alarmaServicePrx.recibirNotificacionMalFuncionamiento(abastecimientoServicePrx,codMaquina, "Se requiere mantenimiento", uuid.toString());
 
 				alarmas.addElement("1", temp);
@@ -430,7 +510,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 
 					// Enviar SCA
 					UUID uuid = UUID.randomUUID();
-					enviarAlarmas();
+					serializarAlarmas();
 					alarmaServicePrx.recibirNotificacionEscasezIngredientes(abastecimientoServicePrx,ing.getNombre(), codMaquina, uuid.toString());
 
 					frame.getTextAreaAlarmas().setText(
@@ -452,7 +532,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 				// Enviar SCA
 				UUID uuid = UUID.randomUUID();
 				alarmasToSend.add(new Alarma(codAlarma + "", ing.getNombre(), new Date(), uuid.toString()));
-				enviarAlarmas();
+				serializarAlarmas();
 				alarmaServicePrx.recibirNotificacionEscasezIngredientes(abastecimientoServicePrx,ing.getNombre(), codMaquina, uuid.toString());
 
 				frame.getTextAreaAlarmas().setText(
@@ -648,7 +728,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 				
 				UUID uuid = UUID.randomUUID();
 				alarmasToSend.add(new Alarma("2", "Faltan monedas de 100", new Date(), uuid.toString()));
-				enviarAlarmas();
+				serializarAlarmas();
 				alarmaServicePrx.recibirNotificacionInsuficienciaMoneda(abastecimientoServicePrx,Moneda.CIEN, codMaquina, uuid.toString());
 				frame.getTextAreaAlarmas().setText(
 						frame.getTextAreaAlarmas().getText()
@@ -668,7 +748,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 			UUID uuid = UUID.randomUUID();
 			alarmasToSend.add(new Alarma("3",
 					"ESTADO CRITICO: Faltan monedas de 100", new Date(), uuid.toString()));
-			enviarAlarmas();
+			serializarAlarmas();
 			alarmaServicePrx.recibirNotificacionInsuficienciaMoneda(abastecimientoServicePrx,Moneda.CIEN, codMaquina, uuid.toString());
 
 			frame.getTextAreaAlarmas().setText(
@@ -691,7 +771,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 				// Enviar SCA
 				UUID uuid = UUID.randomUUID();
 				alarmasToSend.add(new Alarma("4", "Faltan monedas de 200", new Date(), uuid.toString()));
-				enviarAlarmas();
+				serializarAlarmas();
 				alarmaServicePrx.recibirNotificacionInsuficienciaMoneda(abastecimientoServicePrx,Moneda.DOCIENTOS, codMaquina, uuid.toString());
 
 				frame.getTextAreaAlarmas().setText(
@@ -712,7 +792,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 			UUID uuid = UUID.randomUUID();
 			alarmasToSend.add(new Alarma("5",
 					"ESTADO CRITICO: Faltan monedas de 200", new Date(), uuid.toString()));
-			enviarAlarmas();
+			serializarAlarmas();
 			alarmaServicePrx.recibirNotificacionInsuficienciaMoneda(abastecimientoServicePrx,Moneda.DOCIENTOS, codMaquina, uuid.toString());
 
 			frame.getTextAreaAlarmas()
@@ -736,6 +816,7 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 				// Enviar SCA
 				UUID uuid = UUID.randomUUID();
 				alarmasToSend.add(new Alarma("6", "Faltan monedas de 500", new Date(), uuid.toString()));
+				serializarAlarmas();
 				alarmaServicePrx.recibirNotificacionInsuficienciaMoneda(abastecimientoServicePrx,Moneda.QUINIENTOS, codMaquina, uuid.toString());
 
 				frame.getTextAreaAlarmas().setText(
@@ -753,7 +834,8 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 			UUID uuid = UUID.randomUUID();
 			alarmasToSend.add(new Alarma("7",
 					"ESTADO CRITICO: Faltan monedas de 500", new Date(), uuid.toString()));
-			enviarAlarmas();
+			System.out.println("Enviando alarma de monedas de 500");
+			serializarAlarmas();
 			alarmaServicePrx.recibirNotificacionInsuficienciaMoneda(abastecimientoServicePrx,Moneda.QUINIENTOS, codMaquina, uuid.toString());
 
 			frame.getTextAreaAlarmas().setText(
@@ -769,9 +851,13 @@ public class ControladorMQ implements Runnable, ServicioAbastecimiento {
 
 	@Override
 	public void notifyAlarmRecived(String mensaje, int codMaquina, String idAlarma, Current current) {
-		alarmasToSend.stream().filter(a -> a.getId().equals(idAlarma)).forEach(a -> alarmasToSend.remove(a));
+		List<Alarma> toDelete = alarmasToSend.stream().filter(a -> a.getId().equals(idAlarma)).collect(Collectors.toList());
+		System.out.println("Alarma recibida: " + mensaje + " " + codMaquina + " " + idAlarma);
+		alarmasToSend.removeAll(toDelete);
+		serializarAlarmas();
 	}
 	private void enviarAlarmas() {
+		System.out.println("Enviando alarmas desde la mq");
 		alarmasToSend.stream().filter(a -> a.getFecha().getTime() > new Date().getTime()-1000*60*60*24).forEach(a -> alarmaServicePrx.recibirNotificacionMalFuncionamiento(abastecimientoServicePrx,codMaquina, a.getMensaje(), a.getId()));
 	}
 

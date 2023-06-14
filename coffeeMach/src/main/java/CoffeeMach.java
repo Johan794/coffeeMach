@@ -19,10 +19,15 @@ public class CoffeeMach {
 
       ObjectAdapter adapter = communicator.createObjectAdapter("CoffeMach");
       ControladorMQ service = new ControladorMQ();
+
+      ServicioAbastecimiento ServicioAbastecimiento = service;
+      ObjectPrx objectPrx = adapter.add(ServicioAbastecimiento, Util.stringToIdentity("ServicioAbastecimiento"));
+
       service.setAlarmaService(alarmaS);
       service.setVentas(ventas);
       service.setRecetaServicePrx(recetaServicePrx);
-      service.setAbastecimientoServicePrx((ServicioAbastecimientoPrx) service);
+      ServicioAbastecimientoPrx servicioAbastecimientoPrx = ServicioAbastecimientoPrx.checkedCast(objectPrx);
+      service.setAbastecimientoServicePrx(servicioAbastecimientoPrx);
 
       service.run();
       adapter.add((ServicioAbastecimiento) service, Util.stringToIdentity("abastecer"));
