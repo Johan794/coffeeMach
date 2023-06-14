@@ -7,13 +7,13 @@ public class ProxyCacheReceta implements RecetaService{
     private RecetaServicePrx recetaServicePrx; 
     private Map<String, CacheData<String []>> cache;
     private static final long TIME_TO_LIVE = 900000; // Tiempo de vida de 15 minutos en milisegundos
-    private static final String NO_PARAM_QUERY_KEY = "NO_PARAM_QUERY"; //Lave para usar el HashMap y aprovechar sus propiedades
+    private static final String NO_PARAM_QUERY_KEY = "NO_PARAM_QUERY"; //Llave para usar el HashMap y aprovechar sus propiedades
 
     public ProxyCacheReceta(){
         this.cache = new HashMap<>();
     }
 
-    
+
     @Override
     public String[] consultarIngredientes(Current current) {
         return recetaServicePrx.consultarIngredientes();    
