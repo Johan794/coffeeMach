@@ -38,8 +38,13 @@ public class PublisherImp implements publisherSubscriber.Publisher {
     @Override
     public void notifySubscribers(Current current) {
         for(Subscriber observer : observers){
-            observer.getClientPrx().update();
+            new Thread(() -> {
+                try {
+                    observer.getClientPrx().update();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }).start();
         }
-
     }
 }
