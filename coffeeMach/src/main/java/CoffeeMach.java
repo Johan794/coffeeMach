@@ -22,6 +22,7 @@ public class CoffeeMach {
       service.setAlarmaService(alarmaS);
       service.setVentas(ventas);
       service.setRecetaServicePrx(recetaServicePrx);
+      service.setAbastecimientoServicePrx((ServicioAbastecimientoPrx) service);
 
       service.run();
       adapter.add((ServicioAbastecimiento) service, Util.stringToIdentity("abastecer"));

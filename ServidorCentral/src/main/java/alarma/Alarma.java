@@ -6,6 +6,7 @@ import com.zeroc.Ice.Current;
 
 import servicios.AlarmaService;
 import servicios.Moneda;
+import servicios.ServicioAbastecimientoPrx;
 
 public class Alarma implements AlarmaService {
 
@@ -23,21 +24,25 @@ public class Alarma implements AlarmaService {
     }
 
     @Override
-    public void recibirNotificacionEscasezIngredientes(String iDing, int idMaq, Current current) {
+    public void recibirNotificacionEscasezIngredientes(ServicioAbastecimientoPrx servicioAbastecimientoPrx,String iDing, int idMaq,String idAlarm, Current current) {
         manager.alarmaMaquina(ALARMA_INGREDIENTE, idMaq, new Date());
+        servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
     }
 
     @Override
-    public void recibirNotificacionInsuficienciaMoneda(Moneda moneda, int idMaq, Current current) {
+    public void recibirNotificacionInsuficienciaMoneda(ServicioAbastecimientoPrx servicioAbastecimientoPrx,Moneda moneda, int idMaq,String idAlarm, Current current) {
         switch (moneda) {
             case CIEN:
                 manager.alarmaMaquina(ALARMA_MONEDA_CIEN, idMaq, new Date());
+                servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
                 break;
             case DOCIENTOS:
                 manager.alarmaMaquina(ALARMA_MONEDA_DOS, idMaq, new Date());
+                servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
                 break;
             case QUINIENTOS:
                 manager.alarmaMaquina(ALARMA_MONEDA_QUI, idMaq, new Date());
+                servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
                 break;
             default:
                 break;
@@ -45,19 +50,23 @@ public class Alarma implements AlarmaService {
     }
 
     @Override
-    public void recibirNotificacionEscasezSuministro(String idSumin, int idMaq, Current current) {
+    public void recibirNotificacionEscasezSuministro(ServicioAbastecimientoPrx servicioAbastecimientoPrx,String idSumin, int idMaq,String idAlarm, Current current) {
         // suministro
         manager.alarmaMaquina(ALARMA_SUMINISTRO, idMaq, new Date());
+        servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
     }
 
     @Override
-    public void recibirNotificacionAbastesimiento(int idMaq, String idInsumo, int cantidad, Current current) {
+    public void recibirNotificacionAbastesimiento(ServicioAbastecimientoPrx servicioAbastecimientoPrx,int idMaq, String idInsumo, int cantidad,String idAlarm, Current current) {
         // TODO validar el insumo
+        servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
+        current.adapter.getCommunicator().getDefaultLocator();
         manager.desactivarAlarma(ALARMA_INGREDIENTE, idMaq, new Date());
     }
 
     @Override
-    public void recibirNotificacionMalFuncionamiento(int idMaq, String descri, Current current) {
+    public void recibirNotificacionMalFuncionamiento(ServicioAbastecimientoPrx servicioAbastecimientoPrx,int idMaq, String descri,String idAlarm, Current current) {
+        servicioAbastecimientoPrx.notifyAlarmRecived("Alarma recibida", idMaq, idAlarm);
         manager.alarmaMaquina(ALARMA_MAL_FUNCIONAMIENTO, idMaq, new Date());
     }
 
