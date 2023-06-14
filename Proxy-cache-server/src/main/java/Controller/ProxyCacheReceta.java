@@ -1,16 +1,24 @@
 package Controller;
 
+import publisher.PublisherImp;
+import publisherSubscriber.PublisherPrx;
 import servicios.*;
 import java.util.*;
 import com.zeroc.Ice.Current;
-public class ProxyCacheReceta implements RecetaService{
+public class ProxyCacheReceta implements RecetaService, publisherSubscriber.Observer{
     private RecetaServicePrx recetaServicePrx; 
     private Map<String, CacheData<String []>> cache;
+
+    private PublisherPrx server;
+    private PublisherImp publisherImp;
+
+
     private static final long TIME_TO_LIVE = 900000; // Tiempo de vida de 15 minutos en milisegundos
     private static final String NO_PARAM_QUERY_KEY = "NO_PARAM_QUERY"; //Lave para usar el HashMap y aprovechar sus propiedades
 
-    public ProxyCacheReceta(){
+    public ProxyCacheReceta(PublisherPrx server){
         this.cache = new HashMap<>();
+        this.server = server;
     }
 
     
@@ -69,7 +77,9 @@ public class ProxyCacheReceta implements RecetaService{
 	}
 
 
+    @Override
+    public void update(Current current) {
+        publisherImp.notifySubscribers(current);
 
-
-    
+    }
 }

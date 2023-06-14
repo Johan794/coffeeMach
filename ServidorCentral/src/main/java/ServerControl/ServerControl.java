@@ -3,17 +3,23 @@ package ServerControl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import com.zeroc.Ice.Communicator;
 
+import com.zeroc.Ice.Current;
 import modelo.*;
+import publisherSubscriber.ObserverPrx;
 
-public class ServerControl {
+public class ServerControl implements publisherSubscriber.Publisher {
 
+	private List<Subscriber> observers;
 	ArrayList<String> listaAsociada = new ArrayList<String>();
 	private Communicator comunicator;
 
 	public ServerControl(Communicator com) {
 		this.comunicator = com;
+		observers = new ArrayList<>();
 		// ConsolaAdministracion cAdmin=new ConsolaAdministracion(this);
 		// Thread th=new Thread(cAdmin);
 		// th.start();
@@ -92,4 +98,31 @@ public class ServerControl {
 
 	}
 
+	@Override
+	public void addSubscriber(ObserverPrx observer, String hostname, Current current) {
+		if(!isSubscribed(hostname)){
+			observers.add(new Subscriber(observer, hostname));
+		}
+	}
+
+	private boolean isSubscribed(String hostname){
+		List<Subscriber> subscribers = observers.stream()
+				.filter(subscriber -> subscriber.getHostname().equals(hostname))
+				.collect(Collectors.toList());
+		return subscribers.size() != 0;
+	}
+
+	@Override
+	public void removeSubscriber(ObserverPrx observer, String hostname, Current current) {
+		if(isSubscribed(hostname)){
+			observers.removeIf(subscriber -> subscriber.getHostname().equals(hostname));
+		}
+	}
+
+	@Override
+	public void notifySubscribers(Current current) {
+		for(Subscriber observer : observers){
+			observer.getClientPrx().update();
+		}
+	}
 }

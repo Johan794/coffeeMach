@@ -31,6 +31,7 @@ public class ServidorCentral {
             VentasManager ventas = new VentasManager();
             ventas.setCommunicator(communicator);
 
+
             adapter.add(alarma, Util.stringToIdentity("Alarmas"));
             adapter.add(ventas, Util.stringToIdentity("Ventas"));
             adapter.add(log, Util.stringToIdentity("logistica"));
