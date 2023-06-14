@@ -1,26 +1,17 @@
 servicios/RecetaServicePrx.java
  servicios.RecetaServicePrx
-<<<<<<< HEAD
 CoffeeMach.java
  CoffeeMach
-servicios/_ServicioAbastecimientoPrxI.java
- servicios._ServicioAbastecimientoPrxI
-=======
 publisherSubscriber/PublisherPrx.java
  publisherSubscriber.PublisherPrx
-publisherSubscriber/_PublisherPrxI.java
- publisherSubscriber._PublisherPrxI
 servicios/_ServicioAbastecimientoPrxI.java
  servicios._ServicioAbastecimientoPrxI
-alarma/Alarma.java
- alarma.Alarma
-interfazUsuario/Prueba.java
- interfazUsuario.Prueba
-publisherSubscriber/_ObserverPrxI.java
- publisherSubscriber._ObserverPrxI
->>>>>>> 361fd3e42be80f4a5c2d9604c4223fb1735f6d4c
+publisherSubscriber/_PublisherPrxI.java
+ publisherSubscriber._PublisherPrxI
 servicios/_AlarmaServicePrxI.java
  servicios._AlarmaServicePrxI
+publisherSubscriber/_ObserverPrxI.java
+ publisherSubscriber._ObserverPrxI
 interfazUsuario/Prueba.java
  interfazUsuario.Prueba
 alarma/Alarma.java
@@ -35,18 +26,11 @@ servicios/_VentaServicePrxI.java
  servicios._VentaServicePrxI
 servicios/ServicioAbastecimientoPrx.java
  servicios.ServicioAbastecimientoPrx
-<<<<<<< HEAD
-=======
 publisherSubscriber/Publisher.java
  publisherSubscriber.Publisher
  publisherSubscriber.Publisher$1
 publisherSubscriber/ObserverPrx.java
  publisherSubscriber.ObserverPrx
-productoReceta/Receta.java
- productoReceta.Receta
-suministro/SuministroService.java
- suministro.SuministroService
->>>>>>> 361fd3e42be80f4a5c2d9604c4223fb1735f6d4c
 servicios/VentaService.java
  servicios.VentaService
  servicios.VentaService$1
@@ -96,12 +80,12 @@ monedero/DepositoMonedas.java
  monedero.DepositoMonedas
 alarma/AlarmaServiceImp.java
  alarma.AlarmaServiceImp
-publisherSubscriber/Observer.java
- publisherSubscriber.Observer
- publisherSubscriber.Observer$1
 servicios/AlarmaService.java
  servicios.AlarmaService
  servicios.AlarmaService$1
+publisherSubscriber/Observer.java
+ publisherSubscriber.Observer
+ publisherSubscriber.Observer$1
 McControlador/ControladorMQObserver.java
  McControlador.ControladorMQObserver
 servicios/StringSeqHelper.java

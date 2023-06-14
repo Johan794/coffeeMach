@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
 Main-Class: ServidorCentral
-<<<<<<< HEAD
 Class-Path: file:/C:/Users/semillero/.gradle/caches/modules-2/files-2.1/
  com.zeroc/ice/3.7.6/6c7f86b7f9e5f0804a7307077e6c058d8a93fa70/ice-3.7.6.
  jar file:/C:/Users/semillero/.gradle/caches/modules-2/files-2.1/org.pos
@@ -10,13 +9,4 @@ Class-Path: file:/C:/Users/semillero/.gradle/caches/modules-2/files-2.1/
  b33c4e/gson-2.7.jar file:/C:/Users/semillero/.gradle/caches/modules-2/f
  iles-2.1/org.checkerframework/checker-qual/3.5.0/2f50520c8abea66fbd8d26
  e481d3aef5c673b510/checker-qual-3.5.0.jar
-=======
-Class-Path: file:/C:/Users/danie/.gradle/caches/modules-2/files-2.1/com.
- zeroc/ice/3.7.6/6c7f86b7f9e5f0804a7307077e6c058d8a93fa70/ice-3.7.6.jar 
- file:/C:/Users/danie/.gradle/caches/modules-2/files-2.1/org.postgresql/
- postgresql/42.3.1/9ca7df660e875b91c78e3d1608d4d7469ad3470c/postgresql-4
- 2.3.1.jar file:/C:/Users/danie/.gradle/caches/modules-2/files-2.1/org.c
- heckerframework/checker-qual/3.5.0/2f50520c8abea66fbd8d26e481d3aef5c673
- b510/checker-qual-3.5.0.jar
->>>>>>> 361fd3e42be80f4a5c2d9604c4223fb1735f6d4c
 

@@ -1,6 +1,5 @@
 <state>
-<<<<<<< HEAD
-  <timestamp value='1686778373247' />
+  <timestamp value='1686779740679' />
   <sourceSet name='default'>
     <source name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\CoffeMach.ice'>
       <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\servicios\ServicioComLogistica.java' />
@@ -22,38 +21,14 @@
       <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\servicios\RecetaServicePrx.java' />
       <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\servicios\_RecetaServicePrxI.java' />
     </source>
-=======
-  <timestamp value='1686766418767' />
-  <sourceSet name='default'>
-    <source name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\CoffeMach.ice'>
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\ServicioComLogistica.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\ServicioAbastecimiento.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\Moneda.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\AlarmaService.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\VentaService.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\RecetaService.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\StringSeqHelper.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\MapStrIntHelper.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\ServicioComLogisticaPrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\_ServicioComLogisticaPrxI.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\ServicioAbastecimientoPrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\_ServicioAbastecimientoPrxI.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\AlarmaServicePrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\_AlarmaServicePrxI.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\VentaServicePrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\_VentaServicePrxI.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\RecetaServicePrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\servicios\_RecetaServicePrxI.java' />
+    <source name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\PublisherSubscriber.ice'>
+      <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\Observer.java' />
+      <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\Publisher.java' />
+      <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\ObserverPrx.java' />
+      <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\_ObserverPrxI.java' />
+      <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\PublisherPrx.java' />
+      <file name='C:\Users\semillero\Documents\Camilo Campaz\Sem7\coffeMachArqui\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\_PublisherPrxI.java' />
     </source>
-    <source name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\PublisherSubscriber.ice'>
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\Observer.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\Publisher.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\ObserverPrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\_ObserverPrxI.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\PublisherPrx.java' />
-      <file name='C:\Users\danie\Documents\intelliJ-projects\coffeeMach\ServidorCentral\build\generated-src\publisherSubscriber\_PublisherPrxI.java' />
-    </source>
->>>>>>> 361fd3e42be80f4a5c2d9604c4223fb1735f6d4c
     <arg value='C:\Program Files\ZeroC\Ice-3.7.8\\bin\slice2java.exe' />
     <arg value='-IC:\Program Files\ZeroC\Ice-3.7.8\\slice' />
   </sourceSet>
