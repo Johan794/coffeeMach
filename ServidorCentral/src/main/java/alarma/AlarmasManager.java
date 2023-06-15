@@ -31,7 +31,10 @@ public class AlarmasManager {
         String alarma = md.darNombreAlarma(idAlarma);
         String operador = md.darOperador(idMaquina);
 
+        System.out.println("Alarma: " + alarma + " - Operador: " + operador);
         if (alarma != null && operador != null) {
+            System.out.println("Enviando alarma a operador: " + operador);
+            System.out.println("Entra al if");
             AlarmaMaquina aM = new AlarmaMaquina(idAlarma, idMaquina,
                     fechainicial);
             md.registrarAlarma(aM);
