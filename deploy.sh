@@ -6,6 +6,11 @@ echo "Deplegando servidor central"
 
 printf "\n"
 
+echo "Desplegando Proxy cache"
+./deployProxyCache.sh
+
+
+
 echo "Desplegando maquinas de café"
 ./deployCoffeeMach.sh
 

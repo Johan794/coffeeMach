@@ -37,13 +37,15 @@ public class ManejadorDatos {
 				System.out
 						.println("Alarma ya agregada previamente, se notificará al operador encargado");
 			} else {
-
+				System.out.println("Alarma nueva, se agregará a la BD");
 				Statement st = conexion.createStatement();
 				st.execute("SELECT NEXTVAL('CONSECALARMA')");
 				ResultSet rs = st.getResultSet();
+				System.out.println("Se ejecutó la secuencia "+rs);
 				int consecutivo = 0;
 				if (rs.next()) {
 					consecutivo = rs.getInt(1);
+					System.out.println("Se obtuvo el consecutivo "+consecutivo);
 				}
 
 				String insertnuevaA = "INSERT INTO ALARMA_MAQUINA (ID_ALARMA,ID_MAQUINA,FECHA_INICIAL,CONSECUTIVO) VALUES (?,?,?,?)";

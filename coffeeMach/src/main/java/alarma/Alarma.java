@@ -5,9 +5,17 @@ import java.util.Date;
 
 public class Alarma implements Serializable {
 
-	private String tipo, mensaje, estado;
+	private String tipo, mensaje, estado, id;
 	private Date fecha;
 
+	public Alarma(String tipo, String mensaje, Date fecha, String id) {
+		super();
+		this.tipo = tipo;
+		this.mensaje = mensaje;
+		this.fecha = fecha;
+		this.estado = "No atendida";
+		this.id = id;
+	}
 	public Alarma(String tipo, String mensaje, Date fecha) {
 		super();
 		this.tipo = tipo;
@@ -16,6 +24,7 @@ public class Alarma implements Serializable {
 		this.estado = "No atendida";
 	}
 
+	
 	public String getEstado() {
 		return estado;
 	}
@@ -83,6 +92,16 @@ public class Alarma implements Serializable {
 		} else if (!tipo.equals(other.tipo))
 			return false;
 		return true;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

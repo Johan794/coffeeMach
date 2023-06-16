@@ -17,7 +17,7 @@ subprojects {
     //
     slice {
         java {
-            files = [file("../CoffeMach.ice")]
+            files = [file("../CoffeMach.ice"),file("../PublisherSubscriber.ice")]
         }
     }
  
@@ -35,6 +35,10 @@ subprojects {
         implementation 'com.zeroc:ice:3.7.6'
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         implementation 'org.postgresql:postgresql:42.3.1'
+        // https://mvnrepository.com/artifact/com.google.code.gson/gson
+        // https://mvnrepository.com/artifact/com.google.code.gson/gson
+        implementation 'com.google.code.gson:gson:2.7'
+
     }
  
   

@@ -1,6 +1,9 @@
 package alarma;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import com.zeroc.Ice.Communicator;
 
@@ -12,8 +15,11 @@ public class AlarmasManager {
 
     private Communicator comunicator;
 
+    private Map<String,List<String>> alarmasMap;
+
     public AlarmasManager(Communicator communicator) {
         this.comunicator = communicator;
+        this.alarmasMap = new java.util.HashMap<>();
     }
 
     public String alarmaMaquina(int idAlarma, int idMaquina, Date fechainicial) {
@@ -25,7 +31,10 @@ public class AlarmasManager {
         String alarma = md.darNombreAlarma(idAlarma);
         String operador = md.darOperador(idMaquina);
 
+        System.out.println("Alarma: " + alarma + " - Operador: " + operador);
         if (alarma != null && operador != null) {
+            System.out.println("Enviando alarma a operador: " + operador);
+            System.out.println("Entra al if");
             AlarmaMaquina aM = new AlarmaMaquina(idAlarma, idMaquina,
                     fechainicial);
             md.registrarAlarma(aM);
@@ -35,6 +44,10 @@ public class AlarmasManager {
         }
         cbd.cerrarConexion();
         return null;
+    }
+    public String reliableAlarm(int idAlarma, int idMaquina, Date fechainicial){
+        alarmasMap.put(String.valueOf(idMaquina),List.of(String.valueOf(idAlarma),fechainicial.toString()));
+        return "Fallo de máquina: " + idAlarma + " - Atención por:" + idMaquina;
     }
 
     public void desactivarAlarma(int idAlarma, int idMaquina, Date fechaFinal) {

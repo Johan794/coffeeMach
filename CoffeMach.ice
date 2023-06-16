@@ -19,20 +19,19 @@ module servicios{
 
     interface ServicioAbastecimiento {
 	   void abastecer(int codMaquina, int tipoAlarma);
+     void notifyAlarmRecived(string mensaje, int codMaquina,string idAlarma);
     }
 
     enum Moneda{
       CIEN, DOCIENTOS, QUINIENTOS
     }
-  
-
 
     interface AlarmaService{
-      void recibirNotificacionEscasezIngredientes(string iDing, int idMaq);
-      void recibirNotificacionInsuficienciaMoneda(Moneda moneda, int idMaq);
-      void recibirNotificacionEscasezSuministro(string idSumin, int idMaq);
-      void recibirNotificacionAbastesimiento(int idMaq, string idInsumo, int cantidad );
-      void recibirNotificacionMalFuncionamiento(int idMaq, string descri);
+      void recibirNotificacionEscasezIngredientes(ServicioAbastecimiento* serverProxy,string iDing, int idMaq,string idAlarma);
+      void recibirNotificacionInsuficienciaMoneda(ServicioAbastecimiento* serverProxy,Moneda moneda, int idMaq,string idAlarma);
+      void recibirNotificacionEscasezSuministro(ServicioAbastecimiento* serverProxy,string idSumin, int idMaq,string idAlarma);
+      void recibirNotificacionAbastesimiento(ServicioAbastecimiento* serverProxy,int idMaq, string idInsumo, int cantidad,string idAlarma);
+      void recibirNotificacionMalFuncionamiento(ServicioAbastecimiento* serverProxy,int idMaq, string descri,string idAlarma);
 
     }
 
